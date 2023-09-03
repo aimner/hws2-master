@@ -1,4 +1,10 @@
 .radio {
+    color: #000;
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
 
 .radio::before {
@@ -9,7 +15,11 @@
 }
 
 .label {
+    margin-left: 11px;
 }
 
 .options {
+    display: flex;
+    flex-direction: column;
+
 }
