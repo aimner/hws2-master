@@ -14,8 +14,8 @@ function HW11() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужные числа, чтоб увидеть как они отображаются
     const firstSliderName = 'slider-1';
     const secondSliderName = 'slider-2';
-    const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 30))
-    const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 70))
+    const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
+    const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
     const change = (event: Event, value: any) => {
         const sliderName = (event.target as HTMLInputElement).name
