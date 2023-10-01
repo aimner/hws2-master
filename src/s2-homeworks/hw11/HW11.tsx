@@ -12,10 +12,24 @@ import SuperRange from './common/c7-SuperRange/SuperRange'
 
 function HW11() {
     // for autotests // не менять // можно подсунуть в локалСторэдж нужные числа, чтоб увидеть как они отображаются
-    const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
-    const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
+    const firstSliderName = 'slider-1';
+    const secondSliderName = 'slider-2';
+    const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 30))
+    const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 70))
 
-    const change = (event: any, value: any) => {
+    const change = (event: Event, value: any) => {
+        const sliderName = (event.target as HTMLInputElement).name
+      
+        if(sliderName === firstSliderName) {
+            setValue1(value)
+        } else {
+            const [firstValue, secondValue] = value
+            setValue1(firstValue)
+            setValue2(secondValue)
+        }
+       
+        // console.log(value)
+    
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
     }
 
@@ -29,6 +43,9 @@ function HW11() {
                         <span id={'hw11-value'} className={s.number}>{value1}</span>
                         <SuperRange
                             id={'hw11-single-slider'}
+                            value={value1}
+                            onChange={change}
+                            name={firstSliderName}
                             // сделать так чтоб value1 изменялось // пишет студент
 
                         />
@@ -37,6 +54,11 @@ function HW11() {
                         <span id={'hw11-value-1'} className={s.number}>{value1}</span>
                         <SuperRange
                             id={'hw11-double-slider'}
+                            value={[value1, value2]}
+                            
+                            name={secondSliderName}
+                            onChange={change}
+
                             // сделать так чтоб value1/2 изменялось // пишет студент
 
                         />
