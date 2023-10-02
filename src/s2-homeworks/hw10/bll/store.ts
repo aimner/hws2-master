@@ -17,3 +17,4 @@ export type AppStoreType = ReturnType<typeof reducers>
 window.store = store // for dev // для того чтобы автотесты видели состояние данных
 
 export const loadingSelector = (state: AppStoreType) => state.loading.isLoading
+export const themeSelector = (state: AppStoreType) => state.theme.themeId
