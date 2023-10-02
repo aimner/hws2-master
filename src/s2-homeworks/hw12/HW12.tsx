@@ -25,7 +25,7 @@ const HW12 = () => {
   const themeId = useSelector(themeSelector);
 
   const change = (id: number) => {
-    dispatch(changeThemeId(id));
+    dispatch(changeThemeId(+id));
   };
 
   useEffect(() => {
