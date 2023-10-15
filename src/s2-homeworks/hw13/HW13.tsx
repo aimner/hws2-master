@@ -37,7 +37,7 @@ const HW13 = () => {
     axios
       .post(url, { success: x })
       .then((res) => {
-        errorHandler("Код 200!", "...всё ок", "код 200 - обычно означает что скорее всего всё ок)", success200);
+        errorHandler("Код 200!", "...всё ок)", "код 200 - обычно означает что скорее всего всё ок)", success200);
       })
       .catch((e) => {
         if (axios.isAxiosError(e)) {
