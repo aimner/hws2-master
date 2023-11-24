@@ -41,7 +41,6 @@ const HW13 = () => {
       })
       .catch((e) => {
         if (axios.isAxiosError(e)) {
-          console.log(e.response?.status);
           switch (e.response?.status) {
             case 500:
               errorHandler(
@@ -73,6 +72,7 @@ const HW13 = () => {
         // дописать
       });
   };
+
 
   return (
     <div id={"hw13"}>
